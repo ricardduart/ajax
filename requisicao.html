@@ -10,7 +10,20 @@
     <script>
         $(function(){
 
-        })
+           $.ajax({
+               url:"texto.txt",
+               success:function(response){
+                   //console.log(response);
+                   //alert("encontrou!!!!");
+                   //Insrrindo o conteudo do response após a tag <h1>
+                   $("h1").after('<h2>')
+
+           },
+           error:function(){
+               alert("Ocorreu um erro!!!");
+               
+           }
+        });
 
     
 
@@ -19,8 +32,11 @@
 <body>
     
 <h1>Ajax asynchronus JavaScript and XML</h1>
-<P>Tecnica de desenvolvimento web que permite a criaçâo de aplicaçôes mais interativas. tornar páginas web mais rapida pela troca
-    
+<P>
+    Tecnica de desenvolvimento web que permite a criaçâo de aplicaçôes mais interativas. tornar páginas web mais rapida pela troca de pequenas quantidades de imformaçâo<p>
+    <p>Evita que uma página inteira seja regarregada cada vez que  alguma nova imformaçâo precisa ser consultada no servidor
+
+    </p>
 </P>
 </body>
 </html>
