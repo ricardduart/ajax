@@ -9,7 +9,7 @@
     <script src="jquery.js"></script>
     <script>
         $(function(){
-
+    //ajax consulta o texto
            $.ajax({
                url:"texto.txt",
                success:function(response){
@@ -25,7 +25,43 @@
            }
         });
 
+    //ajax consults html
+    $.ajax({
+               url:"texto.html",
+               success:function(response){
+                   //console.log(response);
+                   //alert("encontrou!!!!");
+                   //Insrrindo o conteudo do response após a tag <h1>
+                   $("h1").after('<h2>')
+
+           },
+           error:function(){
+               alert("Ocorreu um erro!!!");
+           }
+        });
     
+    //ajax consulta o json
+     $.ajax({
+               url:"texto.json",
+               success:function(response){
+                   $.each(response,function(indice,obj){
+                       console.log
+                   //console.log(response);
+                   //alert("encontrou!!!!");
+                   //Insrrindo o conteudo do response após a tag <h1>
+                   $.each(response,function(indice,obj))
+                   $("listaUsuario").append('<li>'+obj.nome+'</li>');
+    //allet('encontrou!!!);
+    //Inserindo o conteudo do response a´pós a tag <h1>
+        $('h1').after(response);
+
+           });
+           error:function(){
+               alert("Ocorreu um erro!!!");
+           }
+        });
+        
+
 
     </script>
 </head>
@@ -37,6 +73,13 @@
     <p>Evita que uma página inteira seja regarregada cada vez que  alguma nova imformaçâo precisa ser consultada no servidor
 
     </p>
+    <div>
+       <h1>Lista de usuarios</h1> 
+       <ul id="listausuarios">
+        </ul>
+        <h2>Endereço via cep</h2>
+        <span id="endereço"
+    </div>
 </P>
 </body>
 </html>
